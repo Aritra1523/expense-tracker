@@ -1,0 +1,126 @@
+/* Overall Dashboard Styling */
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9fc;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+/* Premium Card Grid */
+.summary-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.summary-box {
+  flex: 1 1 22%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 220px;
+}
+
+.summary-box span {
+  display: block;
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Card Color Themes */
+.summary-box.income {
+  border-left: 6px solid #28a745;
+  color: #28a745;
+}
+.summary-box.budget {
+  border-left: 6px solid #007bff;
+  color: #007bff;
+}
+.summary-box.spent {
+  border-left: 6px solid #dc3545;
+  color: #dc3545;
+}
+.summary-box.remaining {
+  border-left: 6px solid #ffc107;
+  color: #ffc107;
+}
+.summary-box.savings {
+  border-left: 6px solid #20c997;
+  color: #20c997;
+}
+
+
+
+
+/* Card Hover Effect */
+.summary-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Transactions Section */
+.recent-transactions h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.transaction-item .date {
+  font-size: 13px;
+  color: #888;
+}
+
+.no-transactions {
+  color: #999;
+  font-style: italic;
+}
+
+/* Income Form Section */
+.income-form-section {
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .summary-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .summary-box {
+    flex: 1 1 100%;
+  }
+
+  .dashboard-title {
+    font-size: 28px;
+  }
+}

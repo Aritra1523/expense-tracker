@@ -1,0 +1,558 @@
+/* Root styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0e8ff, #ffe6f0);
+  color: #333;
+  box-sizing: border-box;
+  overflow-y: auto; /* avoid scroll locking */
+}
+
+/* Container wrapper */
+.premium-wrapper {
+  display: flex;
+  min-height: 100vh;
+  gap: 2rem;
+  background: #f4f4f8;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Left panel (sidebar) */
+.left-panel {
+  flex: 0 0 250px;
+  background: #f0e6ff;
+  border-radius: 20px;
+  color: #5a00b0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-shadow:
+    inset 0 0 10px #d6bfff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.left-panel:hover,
+.left-panel:focus-within {
+  background-color: #e6dbff;
+  color: #440083;
+  outline: none;
+}
+
+/* Right main content */
+.right-content {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.right-content:focus-within {
+  box-shadow: 0 8px 20px rgba(123, 0, 179, 0.3);
+  outline: none;
+}
+
+/* Premium container inside right content */
+.premium-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: saturate(180%) blur(12px);
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.premium-container:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Page title */
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4b0082; /* Premium purple */
+  text-align: center;
+  margin-bottom: 2rem;
+  user-select: none;
+  text-shadow: 1px 1px 3px rgba(75, 0, 130, 0.35);
+}
+
+/* Form styling */
+.form {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input group wrapper */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Inputs and selects */
+.input, select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #aaa;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #4b007d;
+  user-select: text;
+}
+
+.input:focus, select:focus {
+  outline: none;
+  border-color: #7b00b3;
+  background: #f9f9ff;
+  box-shadow: 0 0 12px #7b00b3aa;
+}
+
+/* Floating labels */
+.floating-label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  color: #777;
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  user-select: none;
+  background: transparent;
+  padding: 0;
+  font-weight: 500;
+}
+
+.input:focus + .floating-label,
+.input:not(:placeholder-shown) + .floating-label,
+select:not([value=""]) + .floating-label {
+  top: -10px;
+  left: 12px;
+  background: #fff;
+  padding: 0 6px;
+  color: #4b007d;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.select-label {
+  top: -10px !important;
+  background: white;
+  padding: 0 6px;
+  color: #4b007d;
+  font-weight: 600;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(123, 0, 179, 0.15);
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 6px 15px rgba(123, 0, 179, 0.3);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #7b00b3;
+  color: #fff;
+}
+
+.primary:hover,
+.primary:focus {
+  background: #5e008f;
+}
+
+.secondary {
+  background: #aaa;
+  color: #fff;
+}
+
+.secondary:hover,
+.secondary:focus {
+  background: #888;
+}
+
+.tertiary {
+  background: #fff;
+  border: 2px solid #7b00b3;
+  color: #7b00b3;
+}
+
+.tertiary:hover,
+.tertiary:focus {
+  background: #7b00b3;
+  color: #fff;
+}
+
+.export {
+  background: #009688;
+  color: #fff;
+}
+
+.export:hover,
+.export:focus {
+  background: #00796b;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(75, 0, 130, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+  overflow-y: auto; /* allow vertical scroll if needed */
+  animation: fadeInOverlay 0.3s ease forwards;
+}
+
+/* Fade in overlay animation */
+@keyframes fadeInOverlay {
+  from { background: rgba(75, 0, 130, 0); }
+  to { background: rgba(75, 0, 130, 0.4); }
+}
+
+/* Modal box */
+.modal {
+  background: #fff;
+  border-radius: 1.25rem; /* 20px */
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  box-shadow:
+    0 12px 30px rgba(123, 0, 179, 0.25),
+    0 6px 15px rgba(75, 0, 130, 0.15);
+  animation: fadeInScale 0.25s ease forwards;
+  position: relative;
+  font-weight: 500;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fade and scale animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal title */
+.modal h2 {
+  margin: 0 0 1.5rem 0;
+  color: #4b007d;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Close button */
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7b00b3;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  user-select: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: #4b007d;
+  outline: none;
+}
+
+/* Modal form */
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Button group inside modal */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-group button {
+  flex: 1 1 45%;
+  min-width: 120px;
+}
+
+/* Responsive for small devices */
+@media (max-width: 480px) {
+  .modal {
+    max-width: 100%;
+    max-height: 95vh;
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-group button {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+/* Summary section */
+.summary {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.summary h3 span {
+  color: #4b007d;
+  font-weight: 700;
+}
+
+/* Transactions list */
+.transaction-history {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(145deg, #ffffff, #e9e4f7);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(75, 0, 130, 0.1),
+    0 8px 24px rgba(123, 0, 179, 0.2);
+  backdrop-filter: saturate(180%) blur(12px);
+  border: 1px solid rgba(123, 0, 179, 0.15);
+  overflow-y: auto;
+  max-height: 460px;
+}
+
+.transaction-history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #7b00b3 #f0e8ff;
+}
+
+.transaction-history ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.transaction-history ul::-webkit-scrollbar-track {
+  background: #f0e8ff;
+  border-radius: 10px;
+}
+
+.transaction-history ul::-webkit-scrollbar-thumb {
+  background-color: #7b00b3;
+  border-radius: 10px;
+  border: 2px solid #f0e8ff;
+}
+
+.transaction-item {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 12px rgba(123, 0, 179, 0.12),
+    0 2px 6px rgba(123, 0, 179, 0.08);
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.transaction-item:hover,
+.transaction-item:focus-within {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 30px rgba(123, 0, 179, 0.3),
+    0 4px 12px rgba(123, 0, 179, 0.2);
+  background: #f9f5ff;
+  outline: none;
+}
+
+.transaction-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.transaction-info .date {
+  font-size: 0.8rem;
+  color: #6a4bc9;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.transaction-info .description {
+  font-size: 1.05rem;
+  color: #4b007d;
+  font-weight: 700;
+  user-select: text;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e91e63;
+  min-width: 110px;
+  text-align: right;
+  user-select: text;
+}
+
+/* Icon buttons */
+.icon-btn {
+  font-size: 1.4rem;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn.edit {
+  color: #009688;
+}
+
+.icon-btn.edit:hover,
+.icon-btn.edit:focus {
+  color: #004d40;
+  background: #b2dfdb;
+  outline: none;
+}
+
+.icon-btn.delete {
+  color: #f44336;
+}
+
+.icon-btn.delete:hover,
+.icon-btn.delete:focus {
+  color: #b71c1c;
+  background: #ffcdd2;
+  outline: none;
+}
+
+/* No transactions message */
+.no-transactions {
+  color: #888;
+  font-style: italic;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+  }
+
+  .amount {
+    text-align: left;
+    min-width: auto;
+    margin-top: 0.5rem;
+  }
+
+  .transaction-actions {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .left-panel {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+}
