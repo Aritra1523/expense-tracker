@@ -12,6 +12,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
+        {/* Sidebar for larger screens */}
         <aside className="sidebar">
           <h2 className="sidebar-title">Budget Tracker</h2>
           <nav className="sidebar-nav">
@@ -27,15 +28,16 @@ const App = () => {
             <NavLink to="/premium" className={({ isActive }) => (isActive ? 'active' : '')}>
               Premium
             </NavLink>
-            <NavLink to="/Reminders" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink to="/reminders" className={({ isActive }) => (isActive ? 'active' : '')}>
               Reminders
             </NavLink>
-            <NavLink to="/IncomeForm" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink to="/incomeform" className={({ isActive }) => (isActive ? 'active' : '')}>
               IncomeForm
             </NavLink>
           </nav>
         </aside>
 
+        {/* Main content */}
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -44,9 +46,36 @@ const App = () => {
             <Route path="/premium" element={<Premium />} />
             <Route path="/reminders" element={<Reminders />} />
             <Route path="/incomeform" element={<IncomeForm />} />
-
           </Routes>
         </main>
+
+        {/* Bottom navbar for small devices */}
+        <nav className="bottom-navbar">
+          <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>🏠</span>
+            Dashboard
+          </NavLink>
+          <NavLink to="/budget" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>💰</span>
+            Budget
+          </NavLink>
+          <NavLink to="/transactions" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>🧾</span>
+            Transactions
+          </NavLink>
+          <NavLink to="/premium" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>💎</span>
+            Premium
+          </NavLink>
+          <NavLink to="/reminders" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>⏰</span>
+            Reminders
+          </NavLink>
+          <NavLink to="/incomeform" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <span>💵</span>
+            Income
+          </NavLink>
+        </nav>
       </div>
     </Router>
   );

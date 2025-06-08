@@ -110,17 +110,59 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .summary-grid {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .summary-box {
-    flex: 1 1 100%;
+/* Extra small devices (phones <576px) */
+@media (max-width: 575.98px) {
+  .dashboard-container {
+    padding: 20px 10px;
   }
 
   .dashboard-title {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .summary-grid {
+    gap: 12px;
+  }
+
+  .summary-box {
+    min-width: 100%;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .summary-box span {
+    font-size: 22px;
+  }
+
+  .recent-transactions h2 {
+    font-size: 20px;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .transaction-item .date {
+    margin-top: 5px;
+  }
+
+  .income-form-section {
+    margin-top: 30px;
   }
 }
+
+/* Medium devices (tablets <992px) */
+@media (max-width: 991.98px) {
+  .summary-grid {
+    justify-content: center;
+  }
+
+  .summary-box {
+    flex: 1 1 45%;
+  }
+}
+
